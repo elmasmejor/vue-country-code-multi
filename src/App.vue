@@ -9,27 +9,42 @@
         defaultCountry=""
       ></vue-country-code>
     </div>
-    <div>
+    <div style="margin-bottom: 30px">
       <code>{{ selectedCountry }}</code>
+    </div>
+
+    <h2>Telephone Country Select Multi</h2>
+    <div style="margin: 20px auto">
+      <vue-country-code-multi @onSelect="onSelectMulti" />
+    </div>
+    <div>
+      <code>{{ selectedCountries }}</code>
     </div>
   </div>
 </template>
 
 <script>
 import VueCountryCode from "./components/VueCountryCode";
+import VueCountryCodeMulti from "@/components/VueCountryCodeMulti.vue";
+
 export default {
   name: "app",
   components: {
+    VueCountryCodeMulti,
     VueCountryCode
   },
   data() {
     return {
-      selectedCountry: null
+      selectedCountry: null,
+      selectedCountries: []
     };
   },
   methods: {
     onSelect(data) {
       this.selectedCountry = data;
+    },
+    onSelectMulti(data) {
+      this.selectedCountries = data;
     }
   }
 };

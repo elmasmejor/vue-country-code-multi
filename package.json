@@ -19,7 +19,9 @@
     "dist/"
   ],
   "main": "dist/vue-country-code.js",
-  "dependencies": {},
+  "dependencies": {
+    "vue-multiselect": "^2.1.7"
+  },
   "devDependencies": {
     "@rollup/plugin-alias": "^3.0.0",
     "@rollup/plugin-commonjs": "^11.0.1",
